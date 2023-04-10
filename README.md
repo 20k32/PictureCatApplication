@@ -1,1 +1,1 @@
-# PictureCatApplication
+This is my diploma
