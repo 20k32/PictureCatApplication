@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PictureCat", "PictureCat\PictureCat.csproj", "{E75C07BC-BC29-4F12-A0D5-6A32D7F3BA1D}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PictureCatSetup", "PictureCatSetup\PictureCatSetup.vdproj", "{7E5CA1FF-8C85-4A20-A616-EB9204FD03CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E75C07BC-BC29-4F12-A0D5-6A32D7F3BA1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E75C07BC-BC29-4F12-A0D5-6A32D7F3BA1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E75C07BC-BC29-4F12-A0D5-6A32D7F3BA1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E75C07BC-BC29-4F12-A0D5-6A32D7F3BA1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E5CA1FF-8C85-4A20-A616-EB9204FD03CB}.Debug|Any CPU.ActiveCfg = Debug
+		{7E5CA1FF-8C85-4A20-A616-EB9204FD03CB}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90873BDF-F6C9-48B4-9AF1-332A3CC31823}
+	EndGlobalSection
+EndGlobal

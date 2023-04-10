@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ApplictaionIcon.ico" />
+    <None Remove="CustomViews\add.png" />
+    <None Remove="CustomViews\showmore.png" />
+    <None Remove="Images\add.png" />
+    <None Remove="Images\addedpage.png" />
+    <None Remove="Images\ApplictaionIcon.ico" />
+    <None Remove="Images\collageMainMenu.png" />
+    <None Remove="Images\confirm.png" />
+    <None Remove="Images\delete.png" />
+    <None Remove="Images\DragDrop.png" />
+    <None Remove="Images\homepage.png" />
+    <None Remove="Images\like.png" />
+    <None Remove="Images\LikeButton.png" />
+    <None Remove="Images\LoadingGear.gif" />
+    <None Remove="Images\Logo.png" />
+    <None Remove="Images\mainpage.png" />
+    <None Remove="Images\refresh.png" />
+    <None Remove="Images\remove.png" />
+    <None Remove="Images\search.png" />
+    <None Remove="Images\showmore.png" />
+    <None Remove="Images\testcolor3.png" />
+    <None Remove="Images\upload.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ApplictaionIcon.ico" />
+    <Resource Include="CustomViews\add.png" />
+    <Resource Include="CustomViews\showmore.png" />
+    <Resource Include="Images\add.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ApplictaionIcon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\collageMainMenu.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\delete.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\DragDrop.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\LikeButton.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\LoadingGear.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\refresh.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\addedpage.png" />
+    <Resource Include="Images\confirm.png" />
+    <Resource Include="Images\like.png" />
+    <Resource Include="Images\Logo.png" />
+    <Resource Include="Images\mainpage.png" />
+    <Resource Include="Images\remove.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\search.png" />
+    <Resource Include="Images\showmore.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\upload.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UserImages\" />
+    <Folder Include="UserImagesCollage\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.19.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Images\ApplictaionIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="UserImagesToAdd\testcolor.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

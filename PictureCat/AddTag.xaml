@@ -1,0 +1,38 @@
+﻿<Window x:Class="PictureCat.AddTag"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PictureCat"
+        mc:Ignorable="d"
+        Title="Add" 
+        SizeToContent="WidthAndHeight" 
+        FontSize="16"
+        x:Name="AddForm"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Loaded="AddForm_Loaded"
+        Icon="/ApplictaionIcon.ico">
+    <StackPanel Orientation="Vertical">
+        <ComboBox x:Name="CatTagComboBox" SelectedIndex="0">
+            <ComboBoxItem Content="Categories"/>
+            <ComboBoxItem Content="Tags"/>
+        </ComboBox>
+        <StackPanel x:Name="AddStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" Height="Auto">
+            <TextBox x:Name="NewTagTextBox" Width="200" FontSize="16" MaxLength="30" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" KeyDown="NewTagTextBox_KeyDown"/>
+            <Button x:Name="SubmitButton" Content="Submit" Height="30" Click="SubmitButton_Click"/>
+        </StackPanel>
+        <StackPanel x:Name="DeleteStackPanel">
+            <ListBox x:Name="DeletionListBox" Height="117" Width="341" ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                         VirtualizingPanel.IsVirtualizing="True"
+                         VirtualizingPanel.CacheLength="1" 
+                         VirtualizingPanel.IsContainerVirtualizable="True">
+                <ListBox.Resources>
+                    <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource ListCheckBoxItemStyle}"/>
+                </ListBox.Resources>
+            </ListBox>
+            <Button Content="Delete" Click="Button_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

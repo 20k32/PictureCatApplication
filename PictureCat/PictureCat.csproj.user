@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AddTag.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CollageWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomViews\AddNewCategoryCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomViews\CategoryCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomViews\LoadMoreItemsCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomViews\PictureCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="FullSizeImage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SelecedPictureWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AddTag.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CollageWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomViews\AddNewCategoryCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomViews\CategoryCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomViews\LoadMoreItemsCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionaries\GeneralResources.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FullSizeImage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomViews\PictureCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionaries\ScrollBarDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SelecedPictureWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

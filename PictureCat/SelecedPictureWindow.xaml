@@ -1,0 +1,216 @@
+﻿<Window x:Class="PictureCat.SelecedPictureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PictureCat"
+        mc:Ignorable="d"
+        Title="{Binding Title}"
+        Width="620" 
+        SizeToContent="Height"
+        ResizeMode="NoResize"
+        Background="{StaticResource WindowBackgroundBrush}"
+        FontSize="19"
+        WindowStartupLocation="CenterOwner"
+        ScrollViewer.VerticalScrollBarVisibility="Visible" KeyDown="Window_KeyDown"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        x:Name="selectedWindow"
+        Loaded="selectedWindow_Loaded"
+        Closing="selectedWindow_Closing" 
+        Icon="/ApplictaionIcon.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="501"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="DeleteButton" 
+                Grid.Column="2" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Center" 
+                Margin="0, 5, 5, 0" 
+                Style="{StaticResource DleteButtonStyle}" 
+                Height="64" Click="DeleteButton_Click">
+            <Image Source="Images/delete.png"/>
+        </Button>
+        <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
+            <Border x:Name="PictureBorder" Margin="0, 10, 0, 0" CornerRadius="3, 3, 7, 7" BorderBrush="#FF3A3A3A" BorderThickness="5" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White">
+                <StackPanel x:Name="ImageStackPanel" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image x:Name="SelectedImage" Grid.Column="1" Grid.Row="0" MaxHeight="257" MaxWidth="400" MouseLeftButtonDown="SelectedImage_MouseLeftButtonDown" MouseRightButtonDown="SelectedImage_MouseRightButtonDown">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                    <Border BorderBrush="#FF7D7770" VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="0, 5, 0, 0">
+                            <TextBox x:Name="TitleTextBox" Text="{Binding Title}" 
+                                 MinWidth="{Binding ElementName=SelectedImage, Path=ActualWidth}" 
+                                 MaxWidth="150"
+                                 MaxLength="100"
+                                 Style="{StaticResource TitleTextBoxStyle}"
+                                 ScrollViewer.PreviewMouseWheel="TitleTextBox_PreviewMouseWheel"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Border BorderBrush="White" CornerRadius="10" Height="40">
+                    <DatePicker Validation.ErrorTemplate="{x:Null}" x:Name="datePicker1" AllowDrop="False" IsDropDownOpen="false" SelectedDateFormat="Long" SelectedDate="{Binding ReleaseDate}" VerticalAlignment="Center" Width="254">
+                        <DatePicker.Resources>
+                            <Style TargetType="DatePicker">
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                            </Style>
+                            <Style TargetType="DatePickerTextBox">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
+                                            <Grid>
+                                                <Grid.Resources>
+                                                    <SolidColorBrush x:Key="WatermarkBrush" Color="Transparent"/>
+                                                </Grid.Resources>
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualStateGroup.Transitions>
+                                                            <VisualTransition GeneratedDuration="0"/>
+                                                            <VisualTransition GeneratedDuration="0:0:0.1" To="MouseOver"/>
+                                                        </VisualStateGroup.Transitions>
+                                                        <VisualState x:Name="Normal"/>
+                                                        <VisualState x:Name="MouseOver" />
+                                                    </VisualStateGroup>
+                                                    <VisualStateGroup x:Name="WatermarkStates">
+                                                        <VisualStateGroup.Transitions>
+                                                            <VisualTransition GeneratedDuration="0"/>
+                                                        </VisualStateGroup.Transitions>
+                                                        <VisualState x:Name="Unwatermarked"/>
+                                                        <VisualState x:Name="Watermarked">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentElement"/>
+                                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_Watermark"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                    <VisualStateGroup x:Name="FocusStates">
+                                                        <VisualStateGroup.Transitions>
+                                                            <VisualTransition GeneratedDuration="0"/>
+                                                        </VisualStateGroup.Transitions>
+                                                        <VisualState x:Name="Unfocused"/>
+                                                        <VisualState x:Name="Focused" />
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <Border x:Name="Border" BorderBrush="Transparent" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="5" Opacity="1" Padding="{TemplateBinding Padding}">
+                                                    <Grid x:Name="WatermarkContent" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                                        <Border x:Name="ContentElement" BorderBrush="Transparent" BorderThickness="1"/>
+                                                        <Border x:Name="watermark_decorator" BorderBrush="Transparent" BorderThickness="1">
+                                                            <ContentControl x:Name="PART_Watermark" Focusable="False" IsHitTestVisible="False" Opacity="0" Padding="2"/>
+                                                        </Border>
+                                                        <ScrollViewer x:Name="PART_ContentHost" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                    </Grid>
+                                                </Border>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Border.Background" Value="AntiqueWhite" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Border.Background" Value="AntiqueWhite" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DatePicker.Resources>
+                    </DatePicker>
+                </Border>
+                <Button x:Name="LikeButton" 
+                        VerticalAlignment="Center" 
+                        Style="{StaticResource LikeButtonStyleFirst}" 
+                        Margin="25, 10, 0, 10" 
+                        Height="41" Width="57"
+                        Click="LikeButton_Click">
+                    <Image Source="Images/like.png" Width="37" Height="32"/>
+                </Button>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" MaxWidth="336">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" MaxWidth="254">
+                    <Border BorderThickness="2" ScrollViewer.VerticalScrollBarVisibility="Auto" MaxHeight="200">
+                        <ListBox x:Name="CheckListBox" ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                         Height="117" VirtualizingPanel.IsVirtualizing="True"
+                         VirtualizingPanel.CacheLength="1" 
+                         VirtualizingPanel.IsContainerVirtualizable="True">
+                            <ListBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                                <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource ListCheckBoxItemStyle}"/>
+                            </ListBox.Resources>
+                        </ListBox>
+                    </Border>
+                    <Border BorderThickness="2" ScrollViewer.VerticalScrollBarVisibility="Auto" MaxHeight="200">
+                        <ListBox x:Name="HashTagBox" 
+                         SelectionMode="Single" 
+                         ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                         Height="117" VirtualizingPanel.IsVirtualizing="True" 
+                         VirtualizingPanel.CacheLength="1" 
+                         VirtualizingPanel.IsContainerVirtualizable="True">
+                            <ListBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                                <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource ListCheckBoxItemStyle}"/>
+                            </ListBox.Resources>
+                        </ListBox>
+                    </Border>
+                </StackPanel>
+                <StackPanel x:Name="AddDeleteCategoryTagPanel" Orientation="Vertical" VerticalAlignment="Center" Height="Auto"  Margin="25, 0, 0, 0" >
+                    <Button x:Name="AddTagButton" Style="{StaticResource AddDeleteTagCategoryButtonStyle}" Click="Button_Click">
+                        <Image Source="Images/add.png"/>
+                    </Button>
+                    <Button x:Name="DeleteTagButton" Style="{StaticResource AddDeleteTagCategoryButtonStyle}" Click="DeleteTagButton_Click" Margin="0, 5, 0, 5">
+                        <Image Source="Images/remove.png"/>
+                    </Button>
+                    <Button x:Name="AddToCollageButton" Style="{StaticResource AddDeleteTagCategoryButtonStyle}" Click="AddToCollageButton_Click">
+                        <Image Source="Images/collageMainMenu.png" Height="40"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+            <TextBlock Text="Additional information:" Margin="0, 5, 0, 3" HorizontalAlignment="Center" Foreground="Bisque" FontWeight="Medium" />
+
+            <TextBox x:Name="AdditionalInformationRichTextBox" 
+                         Text="{Binding Description}" 
+                         Style="{StaticResource AdditionalInformationTextboxStyle}" 
+                         MaxHeight="75" Margin="0, 0, 0, 10" 
+                         MaxWidth="340"
+                         MaxLength="300"
+                         AcceptsReturn="True" 
+                         TextWrapping="Wrap" 
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         ScrollViewer.PreviewMouseWheel="AdditionalInformationRichTextBox_PreviewMouseWheel"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Margin="0, 0, 0, 10">
+                <Button x:Name="AcceptButton" 
+                        Height="40" 
+                        Style="{StaticResource AcceptButtonStyle}" 
+                        Command="{Binding SaveChangesLocal}" 
+                        CommandParameter="{Binding ElementName=selectedWindow}" 
+                        Grid.Column="0" Width="250" Click="AcceptButton_Click">
+                    <Image Source="Images/confirm.png"/>
+                </Button>
+                <Button x:Name="UploadButton" 
+                        Height="40" 
+                        Command="{Binding AddToDbCommand}" 
+                        Grid.Column="1" Margin="5, 0, 0, 0" 
+                        Width="246" Style="{StaticResource UploadButtonStyle}" Click="UploadButton_Click">
+                    <Image Source="Images/upload.png"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="PictureCat.PictureCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PictureCat"
+             mc:Ignorable="d" 
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             x:Name="MyUserControl">
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border x:Name="ImageBorder" CornerRadius="3" BorderBrush="#E1D7C6" BorderThickness="5" Background="White">
+            <Image x:Name="CurrentPicture" MouseRightButtonDown="CurrentPicture_MouseRightButtonDown"/>
+        </Border>
+    </StackPanel>
+
+</UserControl>
