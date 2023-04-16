@@ -117,7 +117,7 @@ namespace PictureCat {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PictureCat;V1.0.0.0;component/collagewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PictureCat;component/collagewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\CollageWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

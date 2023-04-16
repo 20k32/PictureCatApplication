@@ -69,7 +69,7 @@ namespace PictureCat {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PictureCat;V1.0.0.0;component/customviews/categorycard.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PictureCat;component/customviews/categorycard.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\CustomViews\CategoryCard.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

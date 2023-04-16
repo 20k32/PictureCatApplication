@@ -189,7 +189,7 @@ namespace PictureCat {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PictureCat;V1.0.0.0;component/selecedpicturewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PictureCat;component/selecedpicturewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SelecedPictureWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

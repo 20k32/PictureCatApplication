@@ -340,5 +340,17 @@
     <Style TargetType="Button" x:Key="MainMenuButtonTailStyle" BasedOn="{StaticResource BaseMainMenuButtonStyle}">
         <Setter Property="Border.CornerRadius" Value="0, 15, 15, 0"/>
     </Style>
-    
+
+    <Style TargetType="ToolTip" x:Key="MainMenuToolTipStyle">
+        <Setter Property="HorizontalOffset" Value="90"/>
+        <Setter Property="VerticalOffset" Value="-60"/>
+        <Setter Property = "Foreground" Value="Black"/>
+        <Setter Property = "FontSize" Value="20"/>
+        <Setter Property = "FontWeight" Value="Bold"/>
+        <Setter Property="BorderThickness" Value="5"/>
+        <Setter Property="Content" Value="DRAG IMAGES HERE"/>
+        <Setter Property="Background" Value="Bisque"/>
+        <Setter Property="BorderBrush" Value="#FFF5C067"/>
+        <Setter Property="BorderThickness" Value="5"/>
+    </Style>
 </ResourceDictionary>

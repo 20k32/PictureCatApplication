@@ -23,7 +23,14 @@
             <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Vertical" Margin="0, 10, 0, 0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" MaxWidth="350" MaxHeight="300">
+        <StackPanel 
+            x:Name="LogPanel"
+            Orientation="Vertical" 
+            Margin="0, 10, 0, 0" 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Grid.Row="0" MaxWidth="350"
+            MaxHeight="300">
             <Image x:Name="MainPageImage" 
                    Source="Images/Logo.png" 
                    Stretch="Uniform" 
@@ -31,7 +38,17 @@
                    AllowDrop="True" 
                    DragLeave="MainPageImage_DragLeave" 
                    Drop="MainPageImage_Drop"
-                   MaxHeight="300"/>
+                   MaxHeight="300"
+                   ToolTipService.InitialShowDelay="300"
+                   ToolTipService.PlacementTarget="{Binding ElementName=MainPageImage}">
+                <Image.ToolTip>
+                    <ToolTip Style="{StaticResource MainMenuToolTipStyle}">
+                        Drag image 
+                        files here
+                    </ToolTip>
+                </Image.ToolTip>
+            </Image>
+            
         </StackPanel>
         <GridSplitter Grid.Row="1" 
                       ShowsPreview="False" 
