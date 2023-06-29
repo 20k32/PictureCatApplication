@@ -1,5 +1,3 @@
-This is my diploma.
-
 This application allows you to add images to local database and search them by their data. 
 When you found desired imgae, you can copy it to clipboard using right mouse button.
 Also you can change image data to make search more comfortable or remove image from db.
