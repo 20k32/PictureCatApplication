@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\egorm\Desktop\ррепозитории\PictureCat\PictureCat\obj\Release\net6.0-windows\
+C:\Users\egorm\Desktop\Repositories\PictureCatApplication\PictureCat\obj\Release\net6.0-windows\
 PictureCat
 none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
-C:\Users\egorm\Desktop\ррепозитории\PictureCat\PictureCat\App.xaml
+C:\Users\egorm\Desktop\Repositories\PictureCatApplication\PictureCat\App.xaml
 11206155022
 
 39580045371
-224501524175
+2241973865834
 AddTag.xaml;CollageWindow.xaml;CustomViews\AddNewCategoryCard.xaml;CustomViews\CategoryCard.xaml;CustomViews\LoadMoreItemsCard.xaml;CustomViews\PictureCard.xaml;Dictionaries\GeneralResources.xaml;Dictionaries\ScrollBarDictionary.xaml;FullSizeImage.xaml;MainWindow.xaml;SelecedPictureWindow.xaml;
 
-True
+False
 
